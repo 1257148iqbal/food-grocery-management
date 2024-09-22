@@ -1,0 +1,63 @@
+<div class="flex min-h-screen flex-col items-center justify-center py-2">
+
+  {{#if cart}}
+    <main class="flex w-full md:w-1/2 flex-1 flex-col items-center p-10 md:px-20 text-center">
+
+    </main>
+  {{else}}
+    <main class="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+      <h1 class="text-6xl font-bold">Sorry cart not found</h1>
+    </main>
+  {{/if}}
+</div>
+
+<script type="application/javascript">
+
+{{!-- (function() {
+  var app = {
+    launchApp: function() {
+      window.location.replace("lyxauserapp://NewHomeScreen/{{cart._id}}");
+      this.timer = setTimeout(this.openWebApp, 1000); 
+    },
+
+    openWebApp: function() {
+       if (isIOS()) {
+      window.location.replace("https://itunes.apple.com/app/id1330123889");
+    }
+
+    if (navigator.platform.toLowerCase() === 'android') {
+      window.location.replace("https://play.google.com/store/apps/details?id=1330123889");
+    }
+    }
+  };
+
+  app.launchApp();
+})(); --}}
+
+  var now = new Date().valueOf();
+  setTimeout(function () {
+    if (new Date().valueOf() - now > 100) return;
+    if (isIOS()) {
+      window.location = "https://itunes.apple.com";
+    }
+
+    if (navigator.platform.toLowerCase() === 'android') {
+      window.location = "https://play.google.com";
+    }
+  }, 25);
+  window.location = 'lyxauserapp://NewHomeScreen/{{cart._id}}';
+
+  function isIOS() {
+    return [
+          'iPad Simulator',
+          'iPhone Simulator',
+          'iPod Simulator',
+          'iPad',
+          'iPhone',
+          'iPod'
+        ].includes(navigator.platform)
+        // iPad on iOS 13 detection
+        || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
+</script>

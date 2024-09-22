@@ -1,0 +1,72 @@
+<html lang='en'>
+
+    <head>
+        <meta charset='utf-8' />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+        <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+        />
+        {{#if cart}}
+            <title>{{cart.name}}</title>
+
+            <meta name='twitter:card' content='summary_large_image' />
+            <meta name='twitter:site' content='@site' />
+            <meta name='twitter:creator' content='@handle' />
+            <meta name='description' content='' />
+            <meta property='og:type' content='website' />
+            <meta property='og:locale' content='en_IE' />
+            <meta property='og:site_name' content='Lyxa' />
+            <meta property='og:title' content='Join {{cart.name}}? | Lyxa' />
+            <meta property='og:description' content='' />
+            <meta property='og:url' content='https://www.lyxa.delivery' />
+            <meta property='og:image' content='{{cart.image}}' />
+            <meta property='og:image:alt' content='{{cart.name}}' />
+            <meta property='og:image:width' content='800' />
+            <meta property='og:image:height' content='600' />
+            <link
+                rel='canonical'
+                href='https://request-dev.lyxa.ai/app/group-cart/{{cart._id}}/join'
+            />
+            <meta name='robots' content='index,follow' />
+        {{else}}
+            <title>Group Cart</title>
+            <meta name='robots' content='index,follow' />
+        {{/if}}
+
+        {{#if referralCode}}
+            <title>Invite Friend</title>
+
+            <meta name='twitter:card' content='summary_large_image' />
+            <meta name='twitter:site' content='@site' />
+            <meta name='twitter:creator' content='@handle' />
+            <meta name='description' content='{{referralCode}}' />
+            <meta property='og:type' content='website' />
+            <meta property='og:locale' content='en_IE' />
+            <meta property='og:site_name' content='Lyxa' />
+            <meta property='og:title' content='{{referralCode}}' />
+            <meta property='og:description' content='{{referralCode}}' />
+            <meta
+                property='og:url'
+                content='https://request-dev.lyxa.ai/app/invite?referralCode={{referralCode}}'
+            />
+            <link
+                rel='canonical'
+                href='https://request-dev.lyxa.ai/app/invite?referralCode={{referralCode}}'
+            />
+            <meta name='robots' content='index,follow' />
+        {{else}}
+            <title>Invite Friend</title>
+            <meta name='robots' content='index,follow' />
+        {{/if}}
+
+        <link rel='stylesheet' type='text/css' href='/styles/style.css' />
+    </head>
+
+    <body>
+        {{{body}}}
+    </body>
+    <script>
+
+    </script>
+</html>
